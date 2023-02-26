@@ -44,6 +44,7 @@ function UniqueFirstGenPokemon(props) {
       }
     )
 }, [])
+console.log(items.id);
  if (error) {
    return <div>Error: {error.message}</div>;
  } else if (!isLoaded) {
