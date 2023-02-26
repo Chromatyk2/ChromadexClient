@@ -8,6 +8,8 @@ function ReactLogo () {
 }
 
 function UniqueFirstGenPokemon(props) {
+  const queryParameters = new URLSearchParams(window.location.search);
+  const pseudo = queryParameters.get("pseudo");
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -49,6 +51,9 @@ function UniqueFirstGenPokemon(props) {
    if(name[4] !== undefined && items.sprites !== undefined){
      const shinyOdd = Math.floor((Math.random() * 1365) + 1);
      if(shinyOdd == 1){
+       useEffect(() => {
+         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny, shiny:0})
+      }, [])
        return (
          <>
          <p className="pkmName">{name[4].name}<img className="shinySpark" src="https://res.cloudinary.com/shiny24/image/upload/v1669396824/pokemon/shiny_symbol_pokemon_tdxjdc.png"></img></p>
@@ -58,6 +63,9 @@ function UniqueFirstGenPokemon(props) {
         </>
        );
      }else{
+       useEffect(() => {
+         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny, shiny:0})
+      }, [])
        return (
          <>
          <p className="pkmName">{name[4].name}</p>
