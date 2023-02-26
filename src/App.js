@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import $ from "jquery";
 import './App.css';
 import FirstGen from './component/firstGen.js';
@@ -17,11 +17,10 @@ import CreatePost from './component/CreatePost.js';
 
 function App() {
   return(
-    <>
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/test" element={<CreatePost />} />
-        <Route path="/" exact element={<Pokedex />} />
+        <Route path="/" element={<Pokedex />} />
         <Route path="/sa54LEn76V4Lng" element={<FirstGen />} />
         <Route path="/DPbwt8A27bi26V" element={<SecondGen />} />
         <Route path="/u7fNSv6GfBg328" element={<ThirdGen />} />
@@ -33,9 +32,9 @@ function App() {
         <Route path="/y5d3w62KQiLyP3" element={<NinthGen />} />
         <Route path="/26tQ3JasgSK44y" element={<AllGen />} />
         <Route path="/MY89s2Dv54zsuF" element={<Legendary />} />
-      <Routes>
-    </Router>
-    </>
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
