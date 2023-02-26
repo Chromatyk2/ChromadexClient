@@ -25,22 +25,19 @@ function App() {
         </div>
       </div>
     <Router>
-      <Routes>
-        <Route path="/test" element={<CreatePost />} />
-        <Route path="/" element={<Pokedex />} />
-        <Route path="/sa54LEn76V4Lng" element={<FirstGen />} />
-        <Route path="/DPbwt8A27bi26V" element={<SecondGen />} />
-        <Route path="/u7fNSv6GfBg328" element={<ThirdGen />} />
-        <Route path="/E638Q8Xyvf3Tfy" element={<FourthGen />} />
-        <Route path="/uT6V5J8b7eHx4n" element={<FifthGen />} />
-        <Route path="/RC5dm9zwcW2G55" element={<SixthGen />} />
-        <Route path="/d76C6Xx9MaVnc9" element={<SeventhGen />} />
-        <Route path="/6NFptvb6V74w5J" element={<EightGen />} />
-        <Route path="/y5d3w62KQiLyP3" element={<NinthGen />} />
-        <Route path="/26tQ3JasgSK44y" element={<AllGen />} />
-        <Route path="/MY89s2Dv54zsuF" element={<Legendary />} />
-
-      </Routes>
+        <Route path="/test" render={(props) => <CreatePost />} />
+        <Route path="/" exact  render={(props) => <Pokedex />} />
+        <Route path="/sa54LEn76V4Lng" render={(props) => <FirstGen />} />
+        <Route path="/DPbwt8A27bi26V" render={(props) => <SecondGen />} />
+        <Route path="/u7fNSv6GfBg328" render={(props) => <ThirdGen />} />
+        <Route path="/E638Q8Xyvf3Tfy" render={(props) => <FourthGen />} />
+        <Route path="/uT6V5J8b7eHx4n" render={(props) => <FifthGen />} />
+        <Route path="/RC5dm9zwcW2G55" render={(props) => <SixthGen />} />
+        <Route path="/d76C6Xx9MaVnc9" render={(props) => <EightGen />} />
+        <Route path="/6NFptvb6V74w5J" render={(props) => <NinthGen />} />
+        <Route path="/y5d3w62KQiLyP3" render={(props) => <AllGen />} />
+        <Route path="/26tQ3JasgSK44y" render={(props) => <Legendary />} />
+        <Route path="/MY89s2Dv54zsuF" render={(props) => <Pokedex />} />
     </Router>
     </>
   );
