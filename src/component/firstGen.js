@@ -65,7 +65,7 @@ function UniqueFirstGenPokemon(props) {
        );
      }else{
        useEffect(() => {
-         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny, shiny:0})
+         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: "Chromatyk", pkmName: "Sabelette", pkmImage:"OuiOuibaguette", shiny:0})
       }, [])
        return (
          <>
