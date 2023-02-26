@@ -62,7 +62,7 @@ function UniqueFirstGenPokemon(props) {
         </>
        );
      }else{
-         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny, shiny:0})
+         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny,pkmId:items.id shiny:0})
        return (
          <>
          <p className="pkmName">{name[4].name}</p>
