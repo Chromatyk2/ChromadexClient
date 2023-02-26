@@ -18,12 +18,6 @@ import CreatePost from './component/CreatePost.js';
 function App() {
   return(
     <>
-      <div className="navbar">
-        <div className="links">
-          <a href="/">Main Page</a>
-          <a href="/test">Create Post</a>
-        </div>
-      </div>
       <BrowserRouter>
         <Routes>
           <Route path="/test" element={<CreatePost />} />
