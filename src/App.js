@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import $ from "jquery";
 import './App.css';
 import FirstGen from './component/firstGen.js';
@@ -24,7 +24,7 @@ function App() {
           <a href="/test">Create Post</a>
         </div>
       </div>
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/test" element={<CreatePost />} />
         <Route path="/" element={<Pokedex />} />
@@ -41,7 +41,7 @@ function App() {
         <Route path="/MY89s2Dv54zsuF" element={<Legendary />} />
 
       </Routes>
-    </BrowserRouter>
+    </Router>
     </>
   );
 }
