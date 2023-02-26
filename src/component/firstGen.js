@@ -1,4 +1,5 @@
 import React, {useState, useEffect, Component, useContext, useMemo} from "react";
+import Axios from 'axios'
 
 import PokeBallSvg from "./svg.jsx";
 function ReactLogo () {
@@ -52,7 +53,7 @@ function UniqueFirstGenPokemon(props) {
      const shinyOdd = Math.floor((Math.random() * 1365) + 1);
      if(shinyOdd == 1){
        useEffect(() => {
-         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny, shiny:0})
+         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny, shiny:1})
       }, [])
        return (
          <>
