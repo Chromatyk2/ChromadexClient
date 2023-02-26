@@ -9,7 +9,7 @@ const [title,setTitle] = useState("");
 const [text,setText] = useState("");
 
 const submitPost = () => {
-Axios.post('https://chromadex.herokuapp.com/api/create', {userName: userName, title: title, text:text})
+Axios.post('https://chromatyk-pokemon.herokuapp.com/api/create', {userName: userName, title: title, text:text})
 }
 
     return (
