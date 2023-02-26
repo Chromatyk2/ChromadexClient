@@ -19,6 +19,7 @@ function App() {
   return(
     <>
       <Router>
+      <Routes>
           <Route path="/test" element={<CreatePost />} />
           <Route path="/" element={<Pokedex />} />
           <Route path="/sa54LEn76V4Lng" element={<FirstGen />} />
@@ -32,6 +33,7 @@ function App() {
           <Route path="/y5d3w62KQiLyP3" element={<NinthGen />} />
           <Route path="/26tQ3JasgSK44y" element={<AllGen />} />
           <Route path="/MY89s2Dv54zsuF" element={<Legendary />} />
+        <Routes>
       </Router>
     </>
   );
