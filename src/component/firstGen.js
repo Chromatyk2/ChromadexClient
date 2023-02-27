@@ -15,7 +15,7 @@ function UniqueFirstGenPokemon(props) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [name, setName] = useState([]);
-  const randomNumber = Math.floor((Math.random() * 151) + 1);
+  const randomNumber = Math.floor((Math.random() * 905) + 1);
   useEffect(() => {
    fetch("https://pokeapi.co/api/v2/pokemon/"+randomNumber)
      .then(res => res.json())
@@ -51,7 +51,7 @@ console.log(items.id);
    return <div></div>;
  } else {
    if(name[4] !== undefined && items.sprites !== undefined){
-     const shinyOdd = Math.floor((Math.random() * 2) + 1);
+     const shinyOdd = Math.floor((Math.random() * 1365) + 1);
      if(shinyOdd == 1){
          Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny,pkmId:items.id, shiny:1})
        return (
