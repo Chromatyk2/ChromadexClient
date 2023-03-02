@@ -63,7 +63,7 @@ console.log(items.id);
         </>
        );
      }else{
-         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_default,pkmId:items.id, shiny:0})
+         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_default,pkmId:items.id, shiny:0, dateCapture:new Date()})
        return (
          <>
          <p className="pkmName">{name[4].name}</p>
