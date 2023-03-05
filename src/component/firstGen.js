@@ -53,7 +53,7 @@ console.log(items.id);
    if(name[4] !== undefined && items.sprites !== undefined){
      const shinyOdd = Math.floor((Math.random() * 1365) + 1);
      if(shinyOdd == 1){
-         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny,pkmId:items.id, shiny:1})
+         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny,pkmId:items.id, shiny:1, dateCapture:new Date()})
        return (
          <>
          <p className="pkmName">{name[4].name}<img className="shinySpark" src="https://res.cloudinary.com/shiny24/image/upload/v1669396824/pokemon/shiny_symbol_pokemon_tdxjdc.png"></img></p>
@@ -63,7 +63,7 @@ console.log(items.id);
         </>
        );
      }else{
-         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_default,pkmId:items.id, shiny:0})
+         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_default,pkmId:items.id, shiny:0, dateCapture:new Date()})
        return (
          <>
          <p className="pkmName">{name[4].name}</p>
