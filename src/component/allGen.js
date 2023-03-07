@@ -28,7 +28,6 @@ function UniqueFirstGenPokemon(props) {
             break;
         }
       }
-      randomNumber = 151;
   }else{
       randomNumber = 151;
   }
