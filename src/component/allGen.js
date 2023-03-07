@@ -37,7 +37,7 @@ function UniqueFirstGenPokemon(props) {
      )
  }, [])
  useEffect(() => {
-  fetch("https://pokeapi.co/api/v2/pokemon-species/151/")
+  fetch("https://pokeapi.co/api/v2/pokemon-species/"+randomNumber+"/")
     .then(res => res.json())
     .then(
       (result) => {
