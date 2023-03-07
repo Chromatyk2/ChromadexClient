@@ -22,13 +22,16 @@ function UniqueFirstGenPokemon(props) {
   var randomNumber = 1;
   console.log(randomLegendary.includes(randomNumber));
   if(randomLegendary.includes(randomNumber) === true && legendaryChance != 100){
+    console.log("pas leg");
       while (randomLegendary.includes(randomNumber) === false) {
         randomNumber = Math.floor((Math.random() * 905) + 1);
       }
   }else if (randomLegendary.includes(randomNumber) === true && legendaryChance == 100) {
+    console.log("lege");
     randomNumber = randomLegendary[Math.floor(Math.random()*randomLegendary.length)];
   }else{
     while (randomLegendary.includes(randomNumber) === false) {
+      console.log("cheh");
       randomNumber = Math.floor((Math.random() * 905) + 1);
     }
   }
