@@ -21,18 +21,9 @@ function UniqueFirstGenPokemon(props) {
   // var randomNumber = Math.floor((Math.random() * 905) + 1);
   var randomNumber = 150;
   if(randomLegendary.includes(randomNumber) === true && legendaryChance != 100){
-    console.log("pas leg");
       while (randomLegendary.includes(randomNumber) === true) {
         randomNumber = Math.floor((Math.random() * 905) + 1);
       }
-  }else if (randomLegendary.includes(randomNumber) === true && legendaryChance == 100) {
-    console.log("lege");
-    randomNumber = randomLegendary[Math.floor(Math.random()*randomLegendary.length)];
-  }else{
-    while (randomLegendary.includes(randomNumber) === true) {
-      console.log("cheh");
-      randomNumber = Math.floor((Math.random() * 905) + 1);
-    }
   }
   useEffect(() => {
    fetch("https://pokeapi.co/api/v2/pokemon/"+randomNumber)
