@@ -50,6 +50,35 @@ function UniqueFirstGenPokemon(props) {
       }
     )
 }, [])
+
+  useEffect(() => {
+   fetch("https://pokeapi.co/api/v2/pokemon/"+randomNumber)
+     .then(res => res.json())
+     .then(
+       (result) => {
+         setIsLoaded(true);
+         setItems(result);
+       },
+       (error) => {
+         setIsLoaded(true);
+         setError(error);
+       }
+     )
+ }, [legendaryChance != 100 && isLegendary === true])
+ useEffect(() => {
+  fetch("https://pokeapi.co/api/v2/pokemon-species/"+randomNumber+"/")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        setIsLoaded(true);
+        setName(result.names);
+      },
+      (error) => {
+        setIsLoaded(true);
+        setError(error);
+      }
+    )
+}, [legendaryChance != 100 && isLegendary === true])
 console.log(items.id);
  if (error) {
    return <div>Error: {error.message}</div>;
@@ -58,34 +87,6 @@ console.log(items.id);
  } else {
    if(name[4] !== undefined && items.sprites !== undefined){
      const shinyOdd = Math.floor((Math.random() * 1365) + 1);
-       useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon/"+randomNumber)
-          .then(res => res.json())
-          .then(
-            (result) => {
-              setIsLoaded(true);
-              setItems(result);
-            },
-            (error) => {
-              setIsLoaded(true);
-              setError(error);
-            }
-          )
-      }, [legendaryChance != 100 && isLegendary === true])
-      useEffect(() => {
-       fetch("https://pokeapi.co/api/v2/pokemon-species/"+randomNumber+"/")
-         .then(res => res.json())
-         .then(
-           (result) => {
-             setIsLoaded(true);
-             setName(result.names);
-           },
-           (error) => {
-             setIsLoaded(true);
-             setError(error);
-           }
-         )
-     }, [legendaryChance != 100 && isLegendary === true])
      if(shinyOdd == 1){
          Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny,pkmId:items.id, shiny:1, dateCapture:new Date()})
        return (
