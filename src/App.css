@@ -264,7 +264,7 @@
       height: 400px;
       opacity: 1;
       transform: translateX(calc(9vw - 50px)) translateY(calc(48vh - 125px));
-      border-radius: 50%;
+      border-radius: 0;
     }
 }
 @keyframes flash{
