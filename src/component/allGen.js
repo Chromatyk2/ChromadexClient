@@ -79,7 +79,9 @@ function UniqueFirstGenPokemon(props) {
       }
     )
 }, [legendaryChance != 100 && isLegendary === true])
-console.log(items.id);
+console.log(legendaryChance);
+console.log(name);
+console.log(items);
  if (error) {
    return <div>Error: {error.message}</div>;
  } else if (!isLoaded) {
