@@ -23,7 +23,7 @@ function UniqueFirstGenPokemon(props) {
   console.log(randomLegendary.includes(randomNumber));
   if(randomLegendary.includes(randomNumber) === true && legendaryChance != 100){
     console.log("pas leg");
-      while (randomLegendary.includes(randomNumber) === false) {
+      while (randomLegendary.includes(randomNumber) === true) {
         randomNumber = Math.floor((Math.random() * 905) + 1);
       }
   }else if (randomLegendary.includes(randomNumber) === true && legendaryChance == 100) {
