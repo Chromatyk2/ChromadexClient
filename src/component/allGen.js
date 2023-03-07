@@ -21,9 +21,9 @@ function UniqueFirstGenPokemon(props) {
   const randomNumber = Math.floor((Math.random() * 905) + 1);
   if(randomLegendary.includes(randomNumber) === true && legendaryChance != 100){
       // var randomNumber = randomLegendary[Math.floor(Math.random()*randomLegendary.length)];
-      var randomNumber = 151;
+      randomNumber = 151;
   }else{
-      var randomNumber = 151;
+      randomNumber = 151;
   }
   useEffect(() => {
    fetch("https://pokeapi.co/api/v2/pokemon/"+randomNumber)
