@@ -1,4 +1,5 @@
 import React, {useState, useEffect, Component, useContext, useMemo} from "react";
+import Axios from 'axios'
 
 import PokeBallSvg from "./svg.jsx";
 function ReactLogo () {
@@ -6,12 +7,21 @@ function ReactLogo () {
       <PokeBallSvg />
     );
 }
+
 function UniqueFirstGenPokemon(props) {
+  const queryParameters = new URLSearchParams(window.location.search);
+  const pseudo = queryParameters.get("pseudo");
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [name, setName] = useState([]);
-  const randomNumber = Math.floor((Math.random() * (906 - 1)) + 1);
+  const legendaryChance = Math.floor((Math.random() * 1) + 1);
+  const randomLegendary = [144,145,146,150,151,243,244,245,249,250,251,377,378,379,380,381,382,383,384,385,386,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,638,639,640,641,642,643,644,645,646,647,648,649,716,717,718,719,720,721,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,807,888,889,890,891,892,893,894,895,896,897,898,905]
+  if(legendaryChance = 100){
+    const randomNumber = randomLegendary[Math.floor(Math.random()*randomLegendary.length)];
+  }else{
+    const randomNumber = Math.floor((Math.random() * 905) + 1);
+  }
   useEffect(() => {
    fetch("https://pokeapi.co/api/v2/pokemon/"+randomNumber)
      .then(res => res.json())
@@ -40,6 +50,7 @@ function UniqueFirstGenPokemon(props) {
       }
     )
 }, [])
+console.log(items.id);
  if (error) {
    return <div>Error: {error.message}</div>;
  } else if (!isLoaded) {
@@ -48,6 +59,7 @@ function UniqueFirstGenPokemon(props) {
    if(name[4] !== undefined && items.sprites !== undefined){
      const shinyOdd = Math.floor((Math.random() * 1365) + 1);
      if(shinyOdd == 1){
+         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny,pkmId:items.id, shiny:1, dateCapture:new Date()})
        return (
          <>
          <p className="pkmName">{name[4].name}<img className="shinySpark" src="https://res.cloudinary.com/shiny24/image/upload/v1669396824/pokemon/shiny_symbol_pokemon_tdxjdc.png"></img></p>
@@ -57,6 +69,7 @@ function UniqueFirstGenPokemon(props) {
         </>
        );
      }else{
+         Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_default,pkmId:items.id, shiny:0, dateCapture:new Date()})
        return (
          <>
          <p className="pkmName">{name[4].name}</p>
@@ -70,7 +83,7 @@ function UniqueFirstGenPokemon(props) {
  }
 }
 
-export default function AllGen() {
+export default function FirstGen() {
   return (<DisplayManager />);
 }
 
