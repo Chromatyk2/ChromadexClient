@@ -30,7 +30,7 @@ function UniqueFirstGenPokemon(props) {
     console.log("lege");
     randomNumber = randomLegendary[Math.floor(Math.random()*randomLegendary.length)];
   }else{
-    while (randomLegendary.includes(randomNumber) === false) {
+    while (randomLegendary.includes(randomNumber) === true) {
       console.log("cheh");
       randomNumber = Math.floor((Math.random() * 905) + 1);
     }
