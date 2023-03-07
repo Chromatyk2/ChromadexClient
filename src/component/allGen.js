@@ -21,15 +21,17 @@ function UniqueFirstGenPokemon(props) {
   // var randomNumber = Math.floor((Math.random() * 905) + 1);
   var randomNumber = 151;
   if(randomLegendary.includes(randomNumber) === true && legendaryChance != 100){
-      randomNumber = 151;
+      console.log("C'est pas un leg batard");
       while (randomLegendary.includes(randomNumber) === false) {
         // randomNumber = Math.floor((Math.random() * 905) + 1);
         randomNumber = 151;
       }
   }else if (randomLegendary.includes(randomNumber) === true && legendaryChance == 100) {
+      console.log("C'est un leg GG");
     randomNumber = randomLegendary[Math.floor(Math.random()*randomLegendary.length)];
   }else{
     while (randomLegendary.includes(randomNumber) === false) {
+      console.log("Cheh");
       randomNumber = Math.floor((Math.random() * 905) + 1);
     }
   }
