@@ -21,8 +21,9 @@ function UniqueFirstGenPokemon(props) {
   var randomNumber = Math.floor((Math.random() * 905) + 1);
   if(randomLegendary.includes(randomNumber) === true && legendaryChance != 100){
       // var randomNumber = randomLegendary[Math.floor(Math.random()*randomLegendary.length)];
-      while (randomLegendary.includes(randomNumber) === true && legendaryChance != 100) {
-        randomNumber = Math.floor((Math.random() * 905) + 1);
+      while (randomLegendary.includes(randomNumber) === false) {
+        // randomNumber = Math.floor((Math.random() * 905) + 1);
+        randomNumber = 151;
       }
   }else{
       randomNumber = 151;
