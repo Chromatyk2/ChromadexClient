@@ -27,10 +27,6 @@ function UniqueFirstGenPokemon(props) {
         console.log(randomNumber);
         randomNumber = 151;
       }
-  }else{
-    console.log("NON");
-    console.log(randomNumber);
-      randomNumber = 151;
   }
   useEffect(() => {
    fetch("https://pokeapi.co/api/v2/pokemon/"+randomNumber)
