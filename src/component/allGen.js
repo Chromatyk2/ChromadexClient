@@ -23,9 +23,13 @@ function UniqueFirstGenPokemon(props) {
       // var randomNumber = randomLegendary[Math.floor(Math.random()*randomLegendary.length)];
       while (randomLegendary.includes(randomNumber) === false) {
         // randomNumber = Math.floor((Math.random() * 905) + 1);
+        console.log("OUI");
+        console.log(randomNumber);
         randomNumber = 151;
       }
   }else{
+    console.log("NON");
+    console.log(randomNumber);
       randomNumber = 151;
   }
   useEffect(() => {
