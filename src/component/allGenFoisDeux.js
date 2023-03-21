@@ -58,7 +58,7 @@ function UniqueFirstGenPokemon(props) {
    return <div></div>;
  } else {
    if(name[4] !== undefined && items.sprites !== undefined){
-     const shinyOdd = Math.floor((Math.random() * 1365) + 1);
+     const shinyOdd = Math.floor((Math.random() * 512) + 1);
      if(shinyOdd == 1){
          Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny,pkmId:items.id, shiny:1, dateCapture:new Date()})
        return (
@@ -84,7 +84,7 @@ function UniqueFirstGenPokemon(props) {
  }
 }
 
-export default function AllGen() {
+export default function FoisDeux() {
   return (<DisplayManager />);
 }
 

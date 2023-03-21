@@ -16,7 +16,7 @@ function UniqueFirstGenPokemon(props) {
   const [items, setItems] = useState([]);
   const [name, setName] = useState([]);
   const [isLegendary, setIsLegendary] = useState(false);
-  const legendaryChance = Math.floor((Math.random() * 200) + 1);
+  const legendaryChance = Math.floor((Math.random() * 1) + 1);
   const randomLegendary = [144,145,146,150,151,243,244,245,249,250,251,377,378,379,380,381,382,383,384,385,386,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,638,639,640,641,642,643,644,645,646,647,648,649,716,717,718,719,720,721,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,807,888,889,890,891,892,893,894,895,896,897,898,905]
   var randomNumber = Math.floor((Math.random() * 905) + 1);
   if(randomLegendary.includes(randomNumber) === true && legendaryChance != 100){
@@ -58,7 +58,7 @@ function UniqueFirstGenPokemon(props) {
    return <div></div>;
  } else {
    if(name[4] !== undefined && items.sprites !== undefined){
-     const shinyOdd = Math.floor((Math.random() * 1365) + 1);
+     const shinyOdd = Math.floor((Math.random() * 1) + 1);
      if(shinyOdd == 1){
          Axios.post('https://chromatyk-pokemon.herokuapp.com/api/capture', {pseudo: pseudo, pkmName: name[4].name, pkmImage:items.sprites.other.home.front_shiny,pkmId:items.id, shiny:1, dateCapture:new Date()})
        return (
@@ -84,7 +84,7 @@ function UniqueFirstGenPokemon(props) {
  }
 }
 
-export default function AllGen() {
+export default function Shiny() {
   return (<DisplayManager />);
 }
 
